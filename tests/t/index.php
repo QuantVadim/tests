@@ -13,7 +13,7 @@ $Questions = [];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../styles/TestStyle.css">
-    <script src="../scripts/bacsic.js" type="text/javascript"></script>
+    <script src="../scripts/basic.js" type="text/javascript"></script>
     <script src="../scripts/test_elements.js" type="text/javascript"></script>
     <title>Тест</title>
 </head>
@@ -22,7 +22,7 @@ let test_id = "<?php echo $_GET['id']; ?>";
 </script>
 <body>
 
-
+<?php  ?>
 <?php
     $TypePage = "default";
     if(strlen($_POST["data-update"])>0){

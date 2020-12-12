@@ -64,9 +64,9 @@ let test_id = "<?php echo $_GET['id']; ?>";
         </div>
         <div class="_wrapper">
             <?php 
-                
+
                 for($i = 0; $i < count($objects_quest); $i++){
-                    get_form_quest_editor($objects_quest[$i]);
+                    echo get_form_quest_editor($objects_quest[$i]);
                 }
 
             ?>

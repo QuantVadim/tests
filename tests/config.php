@@ -6,7 +6,11 @@ $config =  (object)[
         'login'=>'root',
         'password'=>'',
         'name'=>'tests'
-    ], 
+    ],
+    'domen' => 'tests',
+    'pages' => (object)[
+    	'test'=>'http://tests/t',
+    ],
 ];
 
 $ROOT = $_SERVER['DOCUMENT_ROOT'];

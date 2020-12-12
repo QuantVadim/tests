@@ -109,7 +109,6 @@ function html_user_mySubscribers($userID, $groupID = false){
 			$q = $db->query("SELECT subscribers from groups where id = $groupID and autor = $userID limit 1");
 			if($row = mysqli_fetch_assoc($q)){
 				$follow = (array)json_decode($row['subscribers']);
-				var_dump($follow);
 				$fst = str_replace(["[","]"], "", $row['subscribers']);
 			}
 		}
@@ -173,6 +172,25 @@ function html_user_mySubscriptions($userID){
 		}
 	}
 	return $ret;
+}
+
+
+function get_test_block($data){
+	global $config;
+	$ret="";
+	$data = (object)$data;
+	$name = $data->name;
+	$description = $data->description;
+	$link = $config->pages->test.'?id='.$data->id;
+	$passed = "Пройдено раз: ".$data->passed_count;
+	$ret = "
+	<div class='test-block node-element'>
+		<h3><a href='$link'>$name</a></h3>
+		<div>$description</div>
+		<div>$passed</div>
+	</div>
+	 ";
+	 return $ret;
 }
 
 

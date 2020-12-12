@@ -4,7 +4,6 @@ include "basic.php";
 include "templates/main.php";
 $USER = false;
 
-echo "string";
 if(isset($_POST['key']) && isset($_POST['myid'])){
 	$access_key = $_POST['key'];
 	$user_id = $_POST['myid'];
@@ -55,13 +54,26 @@ if($USER && ($obj = json_decode($_POST['object'])) ){
 					];
 					break;
 			}
-			echo json_encode($res);
+			echo json_encode((object)$res);
+			break;
+		case 'action':
+			switch ($obj->name) {
+				case 'tofollow':
+					$res = toFollow($obj->myid, $obj->user_id);
+					break;
+					
+				default:
+					$res = ['type'=>'error'];
+					break;
+			}
+			echo json_encode((object)$res);
 			break;
 		
 		default:
 			
 			break;
 	}
+
 
 }else{
 	echo "ERR";

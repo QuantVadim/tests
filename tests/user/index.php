@@ -1,6 +1,7 @@
 <?php 
     include "../config.php";
     include "../basic.php";
+
     loginUser();
 
     $curUser = false;
@@ -84,7 +85,7 @@
 				<?php } ?>	
 			</div>
 			<div class="box-wrapper">
-			
+			<div class="ajax-pages"></div>
 			</div>
 		</div>
 	</content>

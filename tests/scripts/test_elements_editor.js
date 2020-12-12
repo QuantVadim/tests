@@ -31,7 +31,6 @@ function updateInfoAllQuestBlocks(){
 }
 
 function updateInfoQuestion(qid){
-	//let quests = document.getElementsByClassName("quest-block");
 	for(let i = 0; i < QuestBlocks.length; i++){
 		if(QuestBlocks[i]["qid"] == qid){
 			let questStruct = getObjectFromQuest(QuestBlocks[i]["element"]);
@@ -135,6 +134,7 @@ function btn_multiselect(btn){
 			}
 		}
 	}
+	console.log(qb);
 }
 
 function update_quest_listener_choice_editor(questBlock){

@@ -2,6 +2,10 @@ let AllPages = [];
 let pageIsLoading = false;
 let loadedPageName = "";
 
+function logout(){
+	document.getElementById("form-logout").submit();
+}
+
 document.addEventListener("DOMContentLoaded", (e)=>{
 	switchPage('my_tests');
 });
@@ -12,15 +16,12 @@ function LoadPage(name){
 		loadedPageName = name;
 		let myid = getCookie('user_id');
 		let key = getCookie('access_key');
-		let obj = false;
-		let params;
-		obj = {"type":"page", "page_name":name, "count": 30, "last": 0};
+		obj = {"type":"get_user_page", "page_name":name, "count": 30, "last": 0};
 		if(obj){
 			requestToServer(obj, onLoadedPage);
 		}
 	}
 }
-
 
 let pagesNames = {
 	"my_tests": "Тесты",
@@ -30,14 +31,13 @@ let pagesNames = {
 	"my_answers": "Решения"
 };
 
-function onLoadedPage(info){
-	let obj = JSON.parse(info);
+function onLoadedPage(obj){
 	if(obj){
 		let allPg = document.querySelectorAll("#user-pages > div");
 		let upgs = document.querySelector(".ajax-pages");
 		let mypg = false;
 		for(let item of allPg){
-			if(item.getAttribute("name") == obj.name){
+			if(item.getAttribute("name") == obj.page_name){
 				mypg = item;
 				break;
 			}
@@ -45,7 +45,7 @@ function onLoadedPage(info){
 		if(!mypg){
 			let d = document.createElement("DIV");
 			d.classList.toggle("content-wrapper", true);
-			d.setAttribute("name", obj.name);
+			d.setAttribute("name", obj.page_name);
 			upgs.appendChild(d, upgs.parentNode.nextSibling);
 			mypg = d;
 		}
