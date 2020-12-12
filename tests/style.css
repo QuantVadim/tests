@@ -22,8 +22,8 @@ header{
 	position: fixed;
 	height: 42px;
 	width: 100vw;
-	background-color: #8D62A3;
-	border-bottom: 1px solid #714E82;
+	background-color: #1149A3;
+	border-bottom: 1px solid #0F4191;
 	color: white;
 }
 header ._wrapper{
@@ -82,13 +82,13 @@ aside._navigator button.btn{
 	border-bottom: 1px solid #E7E7E7;
 }
 .btn-logout{
-	background-color: #735085;
-	color: #402C4A;
+	background-color: #0F3E8B;
+	color: #4876C1;
 	padding: 6px 10px;
 	border-radius: 6px;
 	border: none;
 }
 .btn-logout:hover{
-	background-color: #A874C2;
+	background-color: #1559C7;
 	cursor: pointer;
 }
