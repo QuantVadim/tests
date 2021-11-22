@@ -3,6 +3,7 @@ include "config.php";
 include "basic.php";
 include "templates/main.php";
 $USER = false;
+$ddd = 'delete me!';
 
 if(isset($_POST['key']) && isset($_POST['myid'])){
 	$access_key = $_POST['key'];
