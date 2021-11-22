@@ -1,0 +1,94 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial;
+}
+body{
+	background-color: #CACACA;
+}
+
+.logo{
+	background-image: url("img/logo.png");
+	background-repeat: no-repeat;
+	background-size: auto 90%;
+	height: 42px;
+	width: 160px;
+	background-position: center;
+}
+
+header{
+	margin-top: -42px;
+	display: block;
+	position: fixed;
+	height: 42px;
+	width: 100vw;
+	background-color: #1149A3;
+	border-bottom: 1px solid #0F4191;
+	color: white;
+}
+header ._wrapper{
+	width: 900px;
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	margin: auto;
+}
+header ._wrapper>div{
+	line-height: 42px;
+}
+
+main{
+	display: block;
+	margin: auto;
+	margin-top: 42px;
+	width: 900px;
+	height: 90vh;
+	padding-top: 3px;
+}
+main.columns2{
+	display: grid;
+	grid-template-columns: auto 1fr;
+}
+.box{
+	display: block;
+	border-radius: 3px;
+	background-color: #F9F9F9;
+	margin: 2px;
+	border: 1px solid #acacac;
+	overflow: hidden;
+	min-height: 42px;
+}
+.box-wrapper{
+	margin: 8px;
+}
+aside{
+	width: 200px;
+}
+
+button.btn{
+	color: #3B3B3B;
+	background-color: #F0F0F0;
+	transition: 0.2s all;
+}
+button.btn:hover{
+	color: #3B3B3B;
+	background-color: white;
+}
+aside._navigator button.btn{
+	width: 100%;
+	padding: 4px 0px;
+	border: none;
+	font-size: 16px;
+	line-height: 20px;
+	border-bottom: 1px solid #E7E7E7;
+}
+.btn-logout{
+	background-color: #0F3E8B;
+	color: #4876C1;
+	padding: 6px 10px;
+	border-radius: 6px;
+	border: none;
+}
+.btn-logout:hover{
+	background-color: #1559C7;
+	cursor: pointer;
+}
